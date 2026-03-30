@@ -27,3 +27,4 @@ Sprzęt asdfcx = new Camera();
 s1.AddSprzęt(asdf);
 
 s1.rent(test1,asd,new DateTime(2021,12,31));
+
