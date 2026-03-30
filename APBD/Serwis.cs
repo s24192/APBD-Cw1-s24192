@@ -48,9 +48,9 @@ public class Serwis
             Console.WriteLine("Limit wynajęć osiągnięty!");
             return;
         }
-        if (sprzęt.GetCzyWypożyczonySprzęt())
+        if (sprzęt.GetCzyWypożyczonySprzęt() && !sprzęt.GetCzyDostępnySprzęt())
         {
-            Console.WriteLine("Limit wynajęć osiągnięty!");
+            Console.WriteLine("Sprzęt nie możliwy do wynajęcia!");
             return;
         }
 
