@@ -42,7 +42,11 @@ public class Serwis
 
     public void rent(Użytkownik najemca, Sprzęt sprzęt, DateTime dataZwrotu)
     {
-        if (najemca.getIlośćWypożyczeń() >= najemca.maksWypożyczeń() && sprzęt.GetCzyDostępnySprzęt()) return;
+        if (najemca.getIlośćWypożyczeń() >= najemca.maksWypożyczeń() && sprzęt.GetCzyDostępnySprzęt())
+        {
+            Console.WriteLine("Limit wynajęć osiągnięty!");
+            return;
+        }
         var asd = new Wypożyczenie(DateTime.Today,dataZwrotu,najemca,sprzęt);
         najemca.NaliczWypożyczenie();
         listaWypożyczeń.Add(asd);

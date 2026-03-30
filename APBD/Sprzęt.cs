@@ -43,14 +43,38 @@ public class Sprzęt
    }
 }
 
-public class Laptop : Sprzęt
+public class Laptop: Sprzęt
 {
+   private string nazwaFirmy;
+   private int ilośćRAMu;
+   public Laptop(string nazwaFirmy, int ram):base()
+   {
+      this.nazwaFirmy = nazwaFirmy;
+      ilośćRAMu = ram;
+   }
+
 }
 
 public class Projektor : Sprzęt
 {
+   private int pobórMocy;
+   private string rozdzielczość;
+
+   public Projektor(int pobórMocy, string rozdzielczość) : base()
+   {
+      this.pobórMocy = pobórMocy;
+      this.rozdzielczość = rozdzielczość;
+   }
 }
 
 public class Camera : Sprzęt
 {
+   private int wbudowanaPamięć;
+   private string typSoczewki;
+
+   public Camera(int wbudowanaPamięć, string typSocziewki) : base()
+   {
+      this.wbudowanaPamięć = wbudowanaPamięć;
+      this.typSoczewki = typSocziewki;
+   }
 }
