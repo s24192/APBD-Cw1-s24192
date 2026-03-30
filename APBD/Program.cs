@@ -21,10 +21,10 @@ Sprzęt asdf = new Camera(1000,"Jakaśtam");
 s1.AddSprzęt(asdf);
 
 Sprzęt asdzx = new Projektor(400,"Full HD");
-s1.AddSprzęt(asd);
+s1.AddSprzęt(asdzx);
 
 Sprzęt asdfcx = new Camera(500,"Full HD");
-s1.AddSprzęt(asdf);
+s1.AddSprzęt(asdfcx);
 
 s1.rent(test2,asd,new DateTime(2021,12,31));
 s1.rent(test2,asd,new DateTime(2021,12,31));
@@ -33,7 +33,9 @@ s1.rent(test2,asd,new DateTime(2021,12,31));
 
 
 s1.ListaSprzętów();
-
+Console.WriteLine("------------");
 s1.ListaDostępnegoSprzętu();
-
+Console.WriteLine("------------");
 s1.Listaużytkownikow();
+Console.WriteLine("------------");
+s1.listaWypożyczonych();

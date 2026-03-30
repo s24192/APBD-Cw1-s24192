@@ -10,14 +10,8 @@ public class Sprzęt
 
    public Sprzęt()
    {
-      SetId();
-   }
-   
-   private void SetId()
-   {
       id = ++Counter;
    }
-
    public int GetId()
    {
       return id;
@@ -28,11 +22,11 @@ public class Sprzęt
       CzyWypożyczonySprzęt = NowyStatus;
    }
 
-   public bool GetCzyWypożyczonySprzęt()
+   public bool GetCzyDostępnySprzęt()
    {
       return czyDostępny;
    }
-   public bool GetCzyDostępnySprzęt()
+   public bool GetCzyWypożyczonySprzęt()
    {
       return CzyWypożyczonySprzęt;
    }
@@ -47,6 +41,11 @@ public class Sprzęt
       CzyWypożyczonySprzęt = status;
       czyDostępny = !CzyWypożyczonySprzęt;
       
+   }
+
+   public override string ToString()
+   {
+      return  " ID sprzętu: "+id.ToString();
    }
 }
 

@@ -16,4 +16,13 @@ public class Wypożyczenie
         this.sprzęt = sprzęt;
     }
 
+    public double czasWypożyczenia()
+    {
+        return (dataWypożyczenia - dataZakończeniaWypożyczenia).TotalDays;
+    }
+
+    public override string ToString()
+    {
+        return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasWypożyczenia();
+    }
 }
