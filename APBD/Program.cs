@@ -26,10 +26,10 @@ s1.AddSprzęt(asdzx);
 Sprzęt asdfcx = new Camera(500,"Full HD");
 s1.AddSprzęt(asdfcx);
 
-s1.rent(test2,asd,new DateTime(2021,12,31));
-s1.rent(test2,asd,new DateTime(2021,12,31));
-s1.rent(test2,asd,new DateTime(2021,12,31));
-s1.rent(test2,asd,new DateTime(2021,12,31));
+s1.rent(test2,asd,new DateTime(2027,12,31),new DateTime(2021,12,31));
+s1.rent(test2,asd,new DateTime(2027,12,31),new DateTime(2021,12,31));
+s1.rent(test2,asd,new DateTime(2027,12,31),new DateTime(2021,12,31));
+s1.rent(test3,asdfcx,new DateTime(2027,12,31),new DateTime(2030,12,31));
 
 
 s1.ListaSprzętów();

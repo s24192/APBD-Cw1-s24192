@@ -4,25 +4,31 @@ public class Wypożyczenie
 {
     private DateTime dataWypożyczenia;
     private DateTime dataZakończeniaWypożyczenia;
+    private DateTime dataZwrotu;
     private Użytkownik najemca;
     private Sprzęt sprzęt;
-    private bool czyTerminowyZwrot;
 
-    public Wypożyczenie(DateTime dataWypożyczenia, DateTime dataZakończeniaWypożyczenia, Użytkownik najemca, Sprzęt sprzęt)
+    public Wypożyczenie(DateTime dataWypożyczenia, DateTime dataZakończeniaWypożyczenia,DateTime dataZwrotu, Użytkownik najemca, Sprzęt sprzęt)
     {
         this.dataWypożyczenia = dataWypożyczenia;
-        dataZakończeniaWypożyczenia = dataZakończeniaWypożyczenia;
+        this.dataZakończeniaWypożyczenia = dataZakończeniaWypożyczenia;
         this.najemca = najemca;
         this.sprzęt = sprzęt;
+        this.dataZwrotu = dataZwrotu;
     }
 
-    public double czasWypożyczenia()
+    public double czasnaWypożyczenie()
     {
-        return (dataWypożyczenia - dataZakończeniaWypożyczenia).TotalDays;
+        return (dataZakończeniaWypożyczenia - dataWypożyczenia).TotalDays;
+    }
+
+    public bool czyTerminowyZwrot()
+    {
+        return czasnaWypożyczenie() > (dataZwrotu - dataWypożyczenia).TotalDays;
     }
 
     public override string ToString()
     {
-        return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasWypożyczenia();
+        return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasnaWypożyczenie() + " Czy zwrócono w terminie: "+czyTerminowyZwrot().ToString();
     }
 }

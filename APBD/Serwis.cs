@@ -41,7 +41,7 @@ public class Serwis
     }
 
 
-    public void rent(Użytkownik najemca, Sprzęt sprzęt, DateTime dataZwrotu)
+    public void rent(Użytkownik najemca, Sprzęt sprzęt, DateTime dataZakończeniaWypożyczenia, DateTime dataZwrotu)
     {
         if (najemca.getIlośćWypożyczeń() >= najemca.maksWypożyczeń()  )
         {
@@ -54,7 +54,7 @@ public class Serwis
             return;
         }
 
-        var asd = new Wypożyczenie(DateTime.Today,dataZwrotu,najemca,sprzęt);
+        var asd = new Wypożyczenie(DateTime.Today,dataZakończeniaWypożyczenia,dataZwrotu, najemca, sprzęt);
         najemca.NaliczWypożyczenie();
         sprzęt.wypożyczony(true);
         listaWypożyczeń.Add(asd);
