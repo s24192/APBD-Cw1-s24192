@@ -32,3 +32,8 @@ s1.rent(test2,asd,new DateTime(2021,12,31));
 s1.rent(test2,asd,new DateTime(2021,12,31));
 
 
+s1.ListaSprzętów();
+
+s1.ListaDostępnegoSprzętu();
+
+s1.Listaużytkownikow();

@@ -4,7 +4,7 @@ namespace APBD_s24192;
 public class Sprzęt
 {
    private static int Counter = 0;
-   private bool CzyWypożyczonySprzęt = true;
+   private bool CzyWypożyczonySprzęt = false;
    private int id;
    private bool czyDostępny = true;
 
@@ -40,6 +40,13 @@ public class Sprzęt
    public void SetCzyDostępnySprzęt(bool status)
    {
       czyDostępny = status;
+      CzyWypożyczonySprzęt = !czyDostępny;
+   }
+   public void wypożyczony(bool status)
+   {
+      CzyWypożyczonySprzęt = status;
+      czyDostępny = !CzyWypożyczonySprzęt;
+      
    }
 }
 

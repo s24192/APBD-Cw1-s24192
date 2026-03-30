@@ -15,7 +15,7 @@ public class Serwis
     {
         foreach (var a in listaSprzętu)
         {
-            Console.WriteLine("Id sprzętu: "+a.GetId() + " Dostepność: " +a.GetCzyWypożyczonySprzęt());
+            Console.WriteLine("Id sprzętu: "+a.GetId() + " Status wypożyczenia: " +a.GetCzyWypożyczonySprzęt() + " Status dostępności: " + a.GetCzyDostępnySprzęt());
         }
     }
 
@@ -49,6 +49,7 @@ public class Serwis
         }
         var asd = new Wypożyczenie(DateTime.Today,dataZwrotu,najemca,sprzęt);
         najemca.NaliczWypożyczenie();
+        sprzęt.wypożyczony(true);
         listaWypożyczeń.Add(asd);
     }
 }
