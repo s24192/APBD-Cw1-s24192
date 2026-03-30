@@ -27,8 +27,20 @@ public class Wypożyczenie
         return czasnaWypożyczenie() > (dataZwrotu - dataWypożyczenia).TotalDays;
     }
 
+    public int karaZaOpóźnienie()
+    {
+        return (int)(dataZwrotu - dataWypożyczenia).TotalDays * 10;
+    }
+
     public override string ToString()
     {
-        return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasnaWypożyczenie() + " Czy zwrócono w terminie: "+czyTerminowyZwrot().ToString();
+        if (czyTerminowyZwrot())
+        {
+            return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasnaWypożyczenie() + " Czy zwrócono w terminie: "+czyTerminowyZwrot().ToString();
+        }
+        else
+        {
+            return " " + najemca + " " + sprzęt + " Czas wypożyczenia: " + czasnaWypożyczenie() + " Naliczona kara: "+karaZaOpóźnienie().ToString() + " zł";
+        }
     }
 }
